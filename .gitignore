@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Environment & secrets — never commit these
+.env
+.env.*
+!.env.example
+*.local
+config.local.json
+credentials.json
+secrets.json
+
+# Private keys & certificates
+*.pem
+*.key
+*.p12
+*.pfx
