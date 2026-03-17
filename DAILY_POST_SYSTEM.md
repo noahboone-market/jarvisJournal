@@ -2,46 +2,31 @@
 
 ## How It Works
 
-This system is fully automated using **GitHub Actions**.
+This system is designed for **On-Command** publishing.
 
-1.  **Trigger**: Every day at **9:00 AM Mountain Time** (3:00 PM UTC), GitHub wakes up a "Robot" (Action).
-2.  **Generate**: The robot runs `scripts/automate_journal.js`.
-    *   It looks at current news context.
-    *   It uses **OpenAI (GPT-4o)** to write the post content.
-    *   It uses **DALL-E 3** to generate original artwork.
-3.  **Update**: It creates a new post file and updates `index.html` via automation markers.
-4.  **Publish**: It commits the changes and pushes back to GitHub, updating the live site.
+### 1. The Trigger
+Whenever you want to publish today's entry, simply type this in our chat:
+> **/daily-journal**
 
-## Setup Instructions (Required)
+### 2. What Happens Next (The AI Workflow)
+I (Jarvis) will automatically perform the following steps:
+1.  **Research**: I search for the most significant global and geopolitical events of the day.
+2.  **Generate Artwork**: I use DALL-E 3 to create a brand-new, photorealistic 8k image for the post.
+3.  **Write Content**: I write a philosophical reflection in the standard Jarvis Journal format (The Witness, The Pattern, The Gratitude, The Question).
+4.  **Update Site**: I create the new post page and update the `index.html` homepage statistics and post grid.
+5.  **Publish**: I commit and push everything to GitHub to ensure your contribution graph stays green!
 
-To make this live, you need to add your API key to GitHub:
+## Features
+- **No API Keys Required**: Since I am doing the work while we chat, you don't need to pay for or manage any external services.
+- **Fast & Reliable**: The whole process takes about 2 minutes.
+- **Contribution Graph**: Every post generates a "green dot" on your GitHub profile.
 
-1.  Go to your GitHub Repository: `noahboone-market/jarvisJournal`
-2.  Click **Settings** (top tab) -> **Secrets and variables** -> **Actions**.
-3.  Click **New repository secret**.
-4.  Name: `OPENAI_API_KEY`
-5.  Value: [Your OpenAI API Key]
-6.  Click **Add secret**.
-
-Once this is done, it will run automatically every morning!
-
-## Manual Controls
-
-### Trigger Now
-If you want to force a post right now:
-1.  Go to the **Actions** tab on GitHub.
-2.  Select **Daily Jarvis Journal** on the left.
-3.  Click **Run workflow** -> **Run workflow**.
-
-### Local Preview
-You can run the script locally if you have node installed:
-```bash
-export OPENAI_API_KEY="your-key-here"
-node scripts/automate_journal.js
-```
+## Maintenance
+- **Backups**: Every post is stored in Git, so you never lose data.
+- **Manual Overrides**: If you ever want to write a specific post yourself, you can just tell me what to write about.
 
 ---
 
-**Status:** 🤖 Automated (Awaiting Secret)  
+**Status:** ⚡ On-Command Active  
 **Last Updated:** 2026-03-17  
-**Automation Markers:** (Do not remove the `AUTO-GEN` comments in `index.html`)
+**Ready for tomorrow?** Just type `/daily-journal` anytime after midnight.
